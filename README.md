@@ -20,6 +20,14 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Features
+
+- User Authentication: Users can sign up and log in using email and password.
+- Dashboard: Displays information about servers, including name, IP address, response time, uptime, and status.
+- Operational Status: Indicates whether all servers are currently operational.
+- Server Sorting: Allows users to sort servers by name (ascending or descending).
+- Server Details: Provides additional information about each server through popovers.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
