@@ -1,5 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "@popperjs/core";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" precedence="default"></link>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" precedence="default" integrity="sha512-3uRNw41z7rXC42yozslvtj6jF9bbqlHzdr+Q9ZNjTTdGYdQGyf7ICsruMfZNMcTT8yvtAAVOu2gWjCu1MyGFgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     </html>
   );
 }

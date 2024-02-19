@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { Button } from "reactstrap";
 
-export default function Home() {
+export default function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isUser, setIsUser] = useState(false);
   const router = useRouter();
-
-  const handleLogin = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
 
     try {
@@ -29,11 +28,11 @@ export default function Home() {
       );
 
       if (foundUser) {
-        setIsLoggedIn(true);
-        localStorage.setItem("isLoggedIn", true);
-        router.push("/dashboard");
+        setIsUser(true);
+        localStorage.setItem("isUser", true);
+        alert("User already exists");
       } else {
-        alert("Invalid login credentials");
+        router.push("/");
       }
     } catch (error) {
       console.error(error);
@@ -53,50 +52,42 @@ export default function Home() {
           </div>
         </div>
         <div className="col-lg-7 vh-100 bg-light d-flex flex-column justify-content-center align-items-center">
-          <h1>Welcome Back</h1>
-          <h2>Sign In</h2>
+          <h1>Get Started</h1>
+          <h2>Sign Up</h2>
           <div className="">
-              <form onSubmit={handleLogin}>
-                <div className="form-group mt-4 ">
-                  <label htmlFor="emailAddress">Email Address</label>
-                  <input
-                    type="email"
-                    className="form-control mt-2"
-                    placeholder="Enter Email"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </div>
-                <div className="form-group mt-4">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    className="form-control mt-2"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary mt-4">
-                  Sign In
-                </button>
-              </form>
+            <form onSubmit={handleSignUp}>
+              <div className="form-group mt-4 ">
+                <label htmlFor="emailAddress">Email Address</label>
+                <input
+                  type="email"
+                  className="form-control mt-2"
+                  placeholder="Enter Email"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+              <div className="form-group mt-4">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  className="form-control mt-2"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <button type="submit" className="btn btn-primary mt-4">
+                Sign Up
+              </button>
+            </form>
           </div>
           <p>Or</p>
-          <h5>Sign in using</h5>
+          <h5>Sign up using</h5>
           <div className=" d-flex justify-content-around">
             <a href="#" className="fa fa-facebook mx-1"></a>
             <a href="#" className="fa fa-google mx-1"></a>
             {/* <a href="#" className="fa fa-linkedin mx-1"></a>
-            <a href="#" className="fa fa-yahoo mx-1"></a> */}
-          </div>
-          <div className="pt-2">
-            <p>
-              Don't have an account?
-              <Link href="/signup" className="signUpLink px-2">
-                Sign Up
-              </Link>
-            </p>
+          <a href="#" className="fa fa-yahoo mx-1"></a> */}
           </div>
         </div>
       </div>

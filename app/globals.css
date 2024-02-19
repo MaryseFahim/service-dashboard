@@ -1,33 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow: hidden;
+  margin: 0;
+}
+/* svg {
+  width: 100px;
+  height: 30px;
+} */
+
+.rectangle:hover {
+  height: 50px;
+  y: 17;
+  opacity: 60%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.mainTitle {
+  font-size: 26px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+text {
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+}
+
+.container-fluid {
+  /* background: linear-gradient(
+    90deg,
+    rgba(61, 155, 73, 1) 0%,
+    rgba(27, 118, 141, 1) 51%,
+    rgba(61, 155, 73, 1) 100%
+  ); */
+  /* background: linear-gradient(90deg, rgba(78,101,255,1) 0%, rgba(0,0,0,1) 100%); */
+  /* background: linear-gradient(90deg, rgba(27,42,138,1) 0%, rgba(0,0,0,1) 100%); */
+  background: linear-gradient(
+    90deg,
+    rgba(10, 37, 64, 1) 0%,
+    rgba(32, 89, 146, 1) 100%
+  );
+}
+
+#scrollable-content {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.fa {
+  padding: 8px;
+  font-size: 25px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #1877f2;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+/* 
+.fa-linkedin {
+  background: #0867c2;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #7e1fff;
+  color: white;
+} */
+
+.signUpLink {
+  text-decoration: none;
+}
+
+.checkMark {
+  background-color: #219653;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #fff;
 }
